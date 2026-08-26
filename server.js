@@ -3,6 +3,17 @@ const { log } = require("console");
 const express = require("express");
 const app = express(); // instans jasaw kerek ham expressdan obj jiberedi ha bul arqali bir neshe is qilamiz express web server quramiz
 const http = require("http");
+const fs = require("fs");
+
+let user;
+
+fs.readFile("database/user.json", "utf8", (err, data) => {
+    if (err) {
+        console.log("ERROR:", err);
+    } else {
+        user = JSON.parse(data);
+    }
+});
 
 //EXPRESTI $ BOLIMDE PAYDA QILAMIZ ✅
 
@@ -25,11 +36,14 @@ app.set("view engine", "ejs"); //ejs ekenin korsetip atirmiz
 // app.get("/gift", function (req, res) {
 //     res.end("<h1> Siz sawgalar bolimindesiz </h1>");
 // });     //🛑🛑TEST🛑🛑
-// app.post("/create-item", (req, res) => {
-//     console.log(req.body); //req.body 🛑TEST🛑
-//     res.json({ test: "success" });
-// });
+app.post("/create-item", (req, res) => {
+    // console.log(req.body); //req.body 🛑TEST🛑
+    // res.json({ test: "success" });
+});
 
+app.get("/author", (req, res) => {
+    res.render("author", { user: user });
+});
 app.get("/", function (req, res) {
     res.render("harid");
 });
