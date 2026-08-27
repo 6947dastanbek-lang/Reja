@@ -2,11 +2,337 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+
+        <link rel="stylesheet" href="/main.css" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        />
+        <title>Portfolio</title>
     </head>
     <body>
-        0
-        <div>Hello World</div>
+        <div class="frame">
+            <div class="main_frame">
+                <div class="left_frame">
+                    <div class="left_1">
+                        <div class="left_1-1">
+                            <img
+                                src="images/Danny.png"
+                                width="156px"
+                                height="142px"
+                                alt="bu yerda rasm bor"
+                            />
+                        </div>
+                        <div class="left_1-2"><%=user.name%></div>
+                        <div class="left_1-3"><%=user.profession%></div>
+                        <div class="left-icons">
+                            <a class="link_href" href="">
+                                <div class="icon">
+                                    <img
+                                        src="icon/Vector (1).svg"
+                                        class="icon-1"
+                                    />
+                                </div>
+                            </a>
+                            <a class="link_href" href="">
+                                <div class="icon">
+                                    <img
+                                        src="icon/Vector (2).svg"
+                                        class="icon-1"
+                                    />
+                                </div>
+                            </a>
+                            <a class="link_href" href="">
+                                <div class="icon">
+                                    <img
+                                        src="icon/Vector (3).svg"
+                                        class="icon-1"
+                                    />
+                                </div>
+                            </a>
+                            <a class="link_href" href="">
+                                <div class="icon">
+                                    <img
+                                        src="icon/Vector (4).svg"
+                                        class="icon-1"
+                                    />
+                                </div>
+                            </a>
+                            <a class="link_href" href="">
+                                <div class="icon">
+                                    <img
+                                        src="icon/Vector (5).svg"
+                                        class="icon-1"
+                                    />
+                                </div>
+                            </a>
+                            <a class="link_href" href="">
+                                <div class="icon">
+                                    <img
+                                        src="icon/Vector (6).svg"
+                                        class="icon-1"
+                                    />
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="marginer"></div>
+
+                    <div class="left_2">
+                        <div class="info-row">
+                            <span class="info-label">Age:</span>
+                            <span class="info-value"><%=user.age%></span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Residence:</span>
+                            <span class="info-value"><%=user.residence%></span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Freelance:</span>
+                            <span class="info-value text-green">Available</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Address:</span>
+                            <span class="info-value"><%=user.adress%></span>
+                        </div>
+                    </div>
+
+                    <div class="marginer"></div>
+
+                    <div class="left_3">
+                        <h3 class="section-title">Languages</h3>
+
+                        <div class="lang-row">
+                            <div class="lang-info">
+                                <span>Russian</span>
+                                <span>60%</span>
+                            </div>
+                            <div class="progress-bg">
+                                <div
+                                    class="progress-fill"
+                                    style="width: 100%"
+                                ></div>
+                            </div>
+                        </div>
+
+                        <div class="lang-row">
+                            <div class="lang-info">
+                                <span>Korean</span>
+                                <span>40%</span>
+                            </div>
+                            <div class="progress-bg">
+                                <div
+                                    class="progress-fill"
+                                    style="width: 80%"
+                                ></div>
+                            </div>
+                        </div>
+
+                        <div class="lang-row">
+                            <div class="lang-info">
+                                <span>English</span>
+                                <span>20%</span>
+                            </div>
+                            <div class="progress-bg">
+                                <div
+                                    class="progress-fill"
+                                    style="width: 60%"
+                                ></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="marginer"></div>
+
+                    <div class="left_4">
+                        <h3 class="section-title">Skills</h3>
+
+                        <div class="lang-row">
+                            <div class="lang-info">
+                                <span>Html</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress-bg">
+                                <div
+                                    class="progress-fill"
+                                    style="width: 90%"
+                                ></div>
+                            </div>
+                        </div>
+
+                        <div class="lang-row">
+                            <div class="lang-info">
+                                <span>CSS</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bg">
+                                <div
+                                    class="progress-fill"
+                                    style="width: 85%"
+                                ></div>
+                            </div>
+                        </div>
+
+                        <div class="lang-row">
+                            <div class="lang-info">
+                                <span>Js</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress-bg">
+                                <div
+                                    class="progress-fill"
+                                    style="width: 80%"
+                                ></div>
+                            </div>
+                        </div>
+
+                        <div class="lang-row">
+                            <div class="lang-info">
+                                <span>PHP</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress-bg">
+                                <div
+                                    class="progress-fill"
+                                    style="width: 75%"
+                                ></div>
+                            </div>
+                        </div>
+
+                        <div class="lang-row">
+                            <div class="lang-info">
+                                <span>WordPress</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bg">
+                                <div
+                                    class="progress-fill"
+                                    style="width: 85%"
+                                ></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="marginer"></div>
+
+                    <div class="left_5">
+                        <h3 class="section-title">Extra Skills</h3>
+
+                        <ul class="extra-list">
+                            <li>
+                                <i class="fa fa-code"></i> Bootstrap,
+                                Materialize
+                            </li>
+                            <li>
+                                <i class="fa fa-code"></i> Stylus, Sass, Less
+                            </li>
+                            <li>
+                                <i class="fa fa-code"></i> Gulp, Webpack, Grunt
+                            </li>
+                            <li><i class="fa fa-code"></i> GIT Knowledge</li>
+                        </ul>
+                    </div>
+
+                    <div class="marginer"></div>
+                </div>
+
+                <div class="midd_frame">
+                    <div class="hero">
+                        <div class="hero-text">
+                            <h1>
+                                I'm <%=user.name%><br />
+                                <span class="big_baner"
+                                    ><%=user.profession%></span
+                                >
+                            </h1>
+                            <p><%=user.service_desc%></p>
+                            <a href="" class="hire-btn"
+                                >HIRE ME <img src="icon/onga.svg" alt=""
+                            /></a>
+                        </div>
+                        <div class="hero-image">
+                            <img src="images/okay.png" alt="" />
+                        </div>
+                    </div>
+
+                    <div class="services">
+                        <h2>My Services</h2>
+                        <p class="services-desc">
+                            I am a Frontend Developer passionate about creating
+                            modern and responsive websites.
+                        </p>
+
+                        <div class="services_big">
+                            <div class="service-card_in">
+                                <img src="images/web-dev.png" alt="" />
+                                <h4>Web Development</h4>
+                                <p>Blog, E-Commerce</p>
+                            </div>
+                            <div class="service-card_in">
+                                <img src="images/ui:ux.png" alt="icon coding" />
+                                <h4>UI/UX Design</h4>
+                                <p>Mobile App, Website Design</p>
+                            </div>
+                            <div class="service-card_in">
+                                <img
+                                    src="images/mikrafon.png"
+                                    alt="icon coding"
+                                />
+                                <h4>Sound Design</h4>
+                                <p>Voice Over, Beat Making</p>
+                            </div>
+                            <div class="service-card_in">
+                                <img src="images/game.png" alt="icon coding" />
+                                <h4>Game Design</h4>
+                                <p>Character Design, Props & Objects</p>
+                            </div>
+                            <div class="service-card_in">
+                                <img src="images/photo.png" alt="icon coding" />
+                                <h4>Photography</h4>
+                                <p>Portrait, Product Photography</p>
+                            </div>
+                            <div class="service-card_in">
+                                <h4>Work with me..</h4>
+                                <p>Contact me,I'm happy to help you</p>
+                                <a href="" class="link">ORDER NOW</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right_frame">
+                    <div class="icons_3">
+                        <img src="icon/ay.svg" alt="" />
+                    </div>
+                    <div class="icons">
+                        <img src="icon/uy.svg" alt="" />
+                    </div>
+
+                    <div class="icons_2">
+                        <img src="icon/link.svg" alt="" />
+                    </div>
+                    <div class="icons_2">
+                        <img src="icon/student.svg" alt="" />
+                    </div>
+                    <div class="icons_2">
+                        <img src="icon/sumka.svg" alt="" />
+                    </div>
+
+                    <div class="icons_2">
+                        <img src="icon/coment.svg" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     </body>
 </html>

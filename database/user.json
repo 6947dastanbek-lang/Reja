@@ -1,10 +1,10 @@
 {
-    "name": "Steve",
+    "name": "DANNY",
     "profession": "Software Engineer",
-    "age": 20,
+    "age": 29,
     "residence": "S.Korea",
     "adress": "S.Korea, Busan",
-    "languages": ["Uzbek", "Korean", "English"],
+    "languages": ["Karakalpak", "Korean", "English"],
     "skills": ["Html", "Css", "Js", "NodeJS", "Python"],
     "extra_skills": [
         "Bootstrap, Materialize",
@@ -13,8 +13,8 @@
         "GIT Knowledge"
     ],
     "work_place": "IT Company",
-    "service_desc": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat...",
-    "about_me": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat feugiat placerat lobortis. Natoq...",
+    "service_desc": "I am a Frontend Developer passionate about creating modern and responsive websites.",
+    "about_me": "I am a Frontend Developer passionate about creating modern and responsive websites..",
     "city": "Denau",
     "title": ["Flower", "Seedlings", "Gardner", "Old", "New"],
     "flower_desc": [
