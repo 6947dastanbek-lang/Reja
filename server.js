@@ -48,7 +48,7 @@ app.get("/", function (req, res) {
     res.render("harid");
 });
 
-const server = http.createServer(app); // core modelimiz  createServer app qabul qiladi ecp past qildiq
+const server = http.createServer(app); // core modelimiz  createServer app qabul qiladi ecp past qildiq. ///SINGLE THREAD PARTLAW
 let PORT = 3000; // portqa listen qildiramiz
 server.listen(PORT, function () {
     console.log(`The server is running successfully on port: ${PORT}`);
