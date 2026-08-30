@@ -96,28 +96,43 @@ console.log("🛑=======🛑");
 // run();
 
 console.log("✅3=================3✅");
-function maslahatBering(a, callback) {
-    if (typeof a !== "number") callback("insert a number ", null);
-    else if (a <= 20) callback(null, list[0]);
-    else if (a > 20 && a <= 30) callback(null, list[1]);
-    else if (a > 30 && a <= 40) callback(null, list[2]);
-    else if (a > 40 && a <= 50) callback(null, list[3]);
-    else if (a > 50 && a <= 60) callback(null, list[4]);
-    else {
-        setTimeout(function () {
-            // setInerval 👍🏼
-            callback(null, list[5]);
-        }, 3000);
-        // callback(null, list[5]);          // test qilip koriwge singel qalay islewin
-    }
-}
+// function maslahatBering(a, callback) {
+//     if (typeof a !== "number") callback("insert a number ", null);
+//     else if (a <= 20) callback(null, list[0]);
+//     else if (a > 20 && a <= 30) callback(null, list[1]);
+//     else if (a > 30 && a <= 40) callback(null, list[2]);
+//     else if (a > 40 && a <= 50) callback(null, list[3]);
+//     else if (a > 50 && a <= 60) callback(null, list[4]);
+//     else {
+//         setTimeout(function () {
+//             // setInerval 👍🏼
+//             callback(null, list[5]);
+//         }, 3000);
+//         // callback(null, list[5]);          // test qilip koriwge singel qalay islewin
+//     }
+// }
 
-console.log(`passed here 0`);
+// console.log(`passed here 0`);
 
-maslahatBering(65, (err, data) => {
-    //`` strin qilip kor insert a number BEREDI
-    if (err) console.log(`ERROR:`, err);
-    console.log("javob:", data);
-});
+// maslahatBering(20, (err, data) => {
+//     //`` strin qilip kor insert a number BEREDI
+//     if (err) console.log(`ERROR:`, err);
+//     console.log("javob:", data);
+// });
 
 console.log(`passed here 1`);
+
+//Mit Task
+//A -Task
+function hisobHarib(a, b) {
+    let count = 0;
+    for (let i = 0; i < b.length; i++) {
+        if (b[i] === a) {
+            //eger a indexsi b index ten bolsa 1 qosadi
+            count++;
+        }
+    }
+    return count;
+}
+
+console.log(hisobHarib("d", "adadadddd"));
