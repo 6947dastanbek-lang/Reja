@@ -1,13 +1,37 @@
-console.log("JAck MA Maslahatlari");
-const list = [
-    "jaqsi oqiwshi bolin'",
-    "duris basliq tan'lan'",
-    "ozin'izge islewdi baslan'",
-    "siz kushli bolgan narselerdi qilin'",
-    "jaslarg'a investitsiya qilin'",
-    "endi dem alin',paydasi joq endi",
-];
-console.log("✅1=================1✅");
+//Mit Task
+//A -Task
+function hisobHarib(a, b) {
+    let count = 0;
+    for (let i = 0; i < b.length; i++) {
+        if (b[i] === a) {
+            //eger a indexsi b index ten bolsa 1 qosadi
+            count++;
+        }
+    }
+    return count;
+}
+
+console.log(hisobHarib("d", "adadadddd"));
+
+//MITASK
+//B-task
+function sanash(sana) {
+    const son = sana.match(/\d/g); // /[]/gi sgartga mofiq qilip beradi
+    return son ? son.length : 0;
+}
+const result = sanash("fhdosjfhnkjs1177dsfdf77");
+console.log(result);
+
+// console.log("JAck MA Maslahatlari");
+// const list = [
+//     "jaqsi oqiwshi bolin'",
+//     "duris basliq tan'lan'",
+//     "ozin'izge islewdi baslan'",
+//     "siz kushli bolgan narselerdi qilin'",
+//     "jaslarg'a investitsiya qilin'",
+//     "endi dem alin',paydasi joq endi",
+// ];
+// console.log("✅1=================1✅");
 //CALLBACK ⬇️
 // function maslahatBering(a, callback) {
 //     if (typeof a !== "number") callback("insert a number ", null);
@@ -33,7 +57,7 @@ console.log("✅1=================1✅");
 // });
 
 // console.log(`passed here 1`);
-console.log("✅2=================2✅");
+// console.log("✅2=================2✅");
 //ASYNC FUNCTION ⬇️
 // async function maslahatBering(a) {
 //     if (typeof a !== "number") throw new Error("insert a number ");
@@ -57,7 +81,7 @@ console.log("✅2=================2✅");
 //         // callback(null, list[5]);          // test qilip koriwge singel qalay islewin
 //     }
 // }
-console.log("🛑=======🛑");
+// console.log("🛑=======🛑");
 // console.log(`passed here 0`);
 //CALL VIA THEN/CATCH islettik. ⬇️
 // maslahatBering(10)
@@ -82,7 +106,7 @@ console.log("🛑=======🛑");
 //         console.log(`ERROR:`, err);
 //     });
 // console.log(`passed here 1`);
-console.log("🛑=======🛑");
+// console.log("🛑=======🛑");
 
 //asyn/await ⬇️ arqali qurdiq saddaliqti beredi //promise hell  BOLMAYDI
 // async function run() {
@@ -95,7 +119,7 @@ console.log("🛑=======🛑");
 // }
 // run();
 
-console.log("✅3=================3✅");
+// console.log("✅3=================3✅");
 // function maslahatBering(a, callback) {
 //     if (typeof a !== "number") callback("insert a number ", null);
 //     else if (a <= 20) callback(null, list[0]);
@@ -120,19 +144,4 @@ console.log("✅3=================3✅");
 //     console.log("javob:", data);
 // });
 
-console.log(`passed here 1`);
-
-//Mit Task
-//A -Task
-function hisobHarib(a, b) {
-    let count = 0;
-    for (let i = 0; i < b.length; i++) {
-        if (b[i] === a) {
-            //eger a indexsi b index ten bolsa 1 qosadi
-            count++;
-        }
-    }
-    return count;
-}
-
-console.log(hisobHarib("d", "adadadddd"));
+// console.log(`passed here 1`);

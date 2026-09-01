@@ -1,57 +1,63 @@
-console.log("web server boshlash");
-const { log } = require("console");
-const express = require("express");
-const app = express(); // instans jasaw kerek ham expressdan obj jiberedi ha bul arqali bir neshe is qilamiz express web server quramiz
+// //BU ESKI VERSIYA EKAN 🛑
+// const mongodb = require("mongodb");
+// const http = require("http");
+// let db;
+// const connectionString =
+//     "mongodb+srv://erdas0101:Anarxan1973%24@cluster0.nhyuu7c.mongodb.net/Reja?appName=Cluster0";
+
+// mongodb.connect(
+//     connectionString,
+//     {
+//         useNewUrlParser: true,
+//         useUnifiedTopology: true,
+//     },
+//     (err, client) => {
+//         if (err) {
+//             console.log("ERROR on connection MongoDB:", err);
+//         } else {
+//             console.log("MongoDB connection succeed");
+//             module.exports = client;
+//             const app = require("./app");
+//             const server = http.createServer(app);
+//             const PORT = 3000;
+//             server.listen(PORT, function () {
+//                 console.log(
+//                     `The server is running successfully on port: ${PORT}, http://localhost:${PORT}`,
+//                 );
+//             });
+//         }
+//     },
+// );
 const http = require("http");
-const fs = require("fs");
+const { MongoClient } = require("mongodb");
 
-let user;
+const connectionString =
+    "mongodb+srv://erdas0101:Anarxan1973%24@cluster0.nhyuu7c.mongodb.net/Reja?appName=Cluster0";
 
-fs.readFile("database/user.json", "utf8", (err, data) => {
-    if (err) {
-        console.log("ERROR:", err);
-    } else {
-        user = JSON.parse(data);
+const client = new MongoClient(connectionString);
+
+let db;
+
+async function start() {
+    try {
+        await client.connect();
+        console.log("MongoDB connection succeed");
+
+        db = client.db("Reja");
+        module.exports = db;
+
+        const app = require("./app");
+        const server = http.createServer(app);
+
+        const PORT = 3000;
+        server.listen(PORT, () => {
+            console.log(
+                `The server is running successfully on port: ${PORT}, http://localhost:${PORT}`,
+            );
+        });
+    } catch (err) {
+        console.log("ERROR on connection MongoDB:", err);
     }
-});
+}
 
-//EXPRESTI $ BOLIMDE PAYDA QILAMIZ ✅
-
-//1 exp kirip kelip atirgan mag bay/ kod jaziladi. KIRISH CODE ✅
-app.use(express.static("public")); // <==har qanday br kirip kelip atirgan zaproslar un public folderi ashiq degen KOREDI degen publikdi clentlerge aship beerip atirmiz css style img lardi jaylaymiz
-app.use(express.json()); //<= json data obj aylantiradi klent ham. web server ortasindagi data json korinisinde boladi
-app.use(express.urlencoded({ extended: true })); // <== html dan tradiotanal request form post qilganda express server qabul qilip aladi .
-
-//2 : hazirse kerek emes SESSION CODE 🔜
-
-//3 EJS template engine. SSR — bu restoranga borganingizda ovqat oshxonada (serverda) tayyorlanib, sizga tayyor holda olib kelinishi kabi. 🛑 arqali backenda html frontent jasap klentke jiberemiz view jasaw VIEW CODE ✅  SSR yaki BSSR ==> Server-Side Rendering — bu HTML sahifani serverda tayyor holda yasab, brauzerga to'liq tayyor HTML ko'rinishida jo'natish usuli.
-app.set("views", "views"); //
-app.set("view engine", "ejs"); //ejs ekenin korsetip atirmiz
-
-//4  ROUTING CODE ✅
-// app.get("/hello", function (req, res) {
-//     res.end("<h1>HELLO WORLD BY DANNY</h1>");
-//     // res.end(`<h1 style="background: red">HELLO WORLD BY DANNY</h1>`); TEST
-// });
-// app.get("/gift", function (req, res) {
-//     res.end("<h1> Siz sawgalar bolimindesiz </h1>");
-// });     //🛑🛑TEST🛑🛑
-app.post("/create-item", (req, res) => {
-    // console.log(req.body); //req.body 🛑TEST🛑
-    // res.json({ test: "success" });
-});
-
-app.get("/author", (req, res) => {
-    res.render("author", { user: user });
-});
-app.get("/", function (req, res) {
-    res.render("harid");
-});
-
-const server = http.createServer(app); // core modelimiz  createServer app qabul qiladi ecp past qildiq. ///SINGLE THREAD PARTLAW
-let PORT = 3000; // portqa listen qildiramiz
-server.listen(PORT, function () {
-    console.log(`The server is running successfully on port: ${PORT}`);
-});
-
-//npm start >> localhost:3000; ✅ bul saytta tekseriw
+start();
