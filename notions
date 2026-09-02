@@ -4,4 +4,9 @@ FRONTEND JAVASCRIPT
 1)Feontendga daxldor JavaScriptni static folderda hosil qilamiz
 2)AXIOS packageni o'rgabnamiz
 3)Jana Reje payda qiliw protsesin Rest API Requestge ozgertemiz
+
+REJALARNI O'CHIRISH (DELETE)
+1)Tanlangan Rejelerdi oshiriw protsesin develop qilamiz
+2)frontend Java Scrip mantig'in dawam etemiz
+3)Payda bolgan Delete Rest API Requestni teksermiz
  */
