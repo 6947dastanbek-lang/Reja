@@ -22,6 +22,13 @@ function sanash(sana) {
 const result = sanash("fhdosjfhnkjs1177dsfdf77");
 console.log(result);
 
+//MITASK
+//C-task
+function tekshir(a, b) {
+    return a.split("").sort().join("") === b.split("").sort().join("");
+}
+console.log(tekshir("qalaysan", "nasyalaq"));
+console.log(tekshir("qlaysan", "jaqsi"));
 // console.log("JAck MA Maslahatlari");
 // const list = [
 //     "jaqsi oqiwshi bolin'",
