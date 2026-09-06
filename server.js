@@ -1,9 +1,17 @@
 const http = require("http");
-const mongodb = require("mongodb");
+const mongodb = require("mongodb"); // NOSQL => Document DataBase turi
 
 let db;
 const connectionString =
     "mongodb+srv://erdas0101:Anarxan1973%24@cluster0.nhyuu7c.mongodb.net/Reja?appName=Cluster0";
+/*mogodb => client => connection => client.db();
+QALAM + CRUD
+GET => READ
+POST => CREAD,UPDATE,DELETE
+*/
+
+//TCP
+
 mongodb.connect(
     connectionString,
     {
@@ -14,8 +22,8 @@ mongodb.connect(
         if (err) console.log("ERROR on connection MongoDB");
         else {
             console.log("MongoDB connection succeed");
-
-            module.exports = client;
+            // console.log(client); // database conaction objeck
+            module.exports = client; // argi tarepte ./server bolip tur
 
             const app = require("./app");
             const server = http.createServer(app);
