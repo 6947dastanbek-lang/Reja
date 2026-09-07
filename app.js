@@ -22,6 +22,26 @@ app.set("views", "views");
 app.set("view engine", "ejs");
 
 // 4-step. Routing code. Serverni yaratish.
+app.get("/", (req, res) => {
+    console.log("user entered /");
+    // console.log(" READ Step 2 Frontend > Backend ✅");
+    // console.log("RAED Step 3 Backend > DataBase ✅");
+    db.collection("plans") //<=REJA ishindegi collection
+        .find()
+        .toArray((err, data) => {
+            // console.log("READ Step 4 DataBase > Backend ✅");
+            // console.log(data); //coment al bul misal ne alip kelip atirganin koriw ushin
+
+            if (err) {
+                console.log(err);
+                res.end("something went wrong");
+            } else {
+                // console.log("READ Step 5 DataBase > Backend + HTML ✅");
+                res.render("reja", { items: data });
+            }
+        });
+});
+
 app.post("/create-item", (req, res) => {
     console.log("CR user entered /create-item");
     // console.log("CR Step 2 Frontend > Backend ✅");
@@ -57,12 +77,16 @@ app.post("/delete-item", (req, res) => {
 });
 
 app.post("/edit-item", (req, res) => {
+    console.log("STEP-2");
     const data = req.body;
     console.log(data);
+    console.log("STEP-3");
     db.collection("plans").findOneAndUpdate(
-        { _id: new mongodb.ObjectID(data.id) },
-        { $set: { reja: data.new_input } },
+        { _id: new mongodb.ObjectID(data.id) }, //bu bormi
+        { $set: { reja: data.new_input } }, //bor bolsa shunga yangila
         function (err, data) {
+            console.log("STEP-4");
+            console.log("STEP-5");
             res.json({ state: "success" });
         },
     );
@@ -75,26 +99,6 @@ app.post("/delete-all", (req, res) => {
             res.json({ state: "Hamma rejalar ochirildi" });
         });
     }
-});
-
-app.get("/", (req, res) => {
-    console.log("user entered /");
-    // console.log(" READ Step 2 Frontend > Backend ✅");
-    // console.log("RAED Step 3 Backend > DataBase ✅");
-    db.collection("plans") //<=REJA ishindegi collection
-        .find()
-        .toArray((err, data) => {
-            // console.log("READ Step 4 DataBase > Backend ✅");
-            // console.log(data); //coment al bul misal ne alip kelip atirganin koriw ushin
-
-            if (err) {
-                console.log(err);
-                res.end("something went wrong");
-            } else {
-                // console.log("READ Step 5 DataBase > Backend + HTML ✅");
-                res.render("reja", { items: data });
-            }
-        });
 });
 
 module.exports = app;

@@ -29,6 +29,65 @@ function tekshir(a, b) {
 }
 console.log(tekshir("qalaysan", "nasyalaq"));
 console.log(tekshir("qlaysan", "jaqsi"));
+
+//MITASK
+//D -TASK
+class Shop {
+    constructor(non, lagmon, cola) {
+        this.mahsulotlar = {
+            non: non,
+            lagmon: lagmon,
+            cola: cola,
+        };
+    }
+
+    // waqit farmatta qaytaratin medhod
+
+    vaqtOl() {
+        const now = new Date();
+        const soat = String(now.getHours()).padStart(2, "0");
+        const minut = String(now.getMinutes()).padStart(2, "0");
+        return `${soat}:${minut}`;
+    }
+
+    qoldiq() {
+        const vaqt = this.vaqtOl();
+        const xabar = `hozir ${vaqt}da ${this.mahsulotlar.non}ta non, ${this.mahsulotlar.lagmon}ta lagmon va ${this.mahsulotlar.cola}ta cola mavjud!`;
+        console.log(xabar);
+        return xabar;
+    }
+
+    sotish(mahsulot, son) {
+        if (this.mahsulotlar[mahsulot] === undefined) {
+            console.log(`Xato: "${mahsulot}" degan mahsulot mavjud emas!`);
+            return;
+        }
+        if (this.mahsulotlar[mahsulot] < son) {
+            console.log(`Xato: yetarli ${mahsulot} yo'q!`);
+            return;
+        }
+        this.mahsulotlar[mahsulot] -= son;
+        console.log(`${this.vaqtOl()}da ${son}ta ${mahsulot} sotildi.`);
+    }
+
+    qabul(mahsulot, son) {
+        if (this.mahsulotlar[mahsulot] === undefined) {
+            console.log(`Xato: "${mahsulot}" degan mahsulot mavjud emas!`);
+            return;
+        }
+        this.mahsulotlar[mahsulot] += son;
+        console.log(`${this.vaqtOl()}da ${son}ta ${mahsulot} qabul qilindi.`);
+    }
+}
+
+const shop = new Shop(4, 5, 2);
+shop.qoldiq();
+
+shop.sotish("non", 3);
+shop.qabul("cola", 4);
+
+shop.qoldiq(); //
+
 // console.log("JAck MA Maslahatlari");
 // const list = [
 //     "jaqsi oqiwshi bolin'",

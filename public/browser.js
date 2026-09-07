@@ -58,6 +58,7 @@ document.addEventListener("click", function (e) {
     //edit opr
     if (e.target.classList.contains("edit-me")) {
         // alert(`siz edit tugmasini bostingiz`);
+
         let userInput = prompt(
             "O'zgartirish kiriting",
             e.target.parentElement.parentElement.querySelector(".item-text")
@@ -65,12 +66,14 @@ document.addEventListener("click", function (e) {
         );
         if (userInput) {
             // console.log(userInout);
+            console.log("STEP-1");
             axios
                 .post("/edit-item", {
                     id: e.target.getAttribute("data-id"),
                     new_input: userInput,
                 })
                 .then((response) => {
+                    console.log("STEP-6");
                     console.log(response.data);
                     e.target.parentElement.parentElement.querySelector(
                         ".item-text",
