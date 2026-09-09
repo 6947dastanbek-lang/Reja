@@ -7,7 +7,7 @@ const moment = require("moment");
 
 // MongoDB call
 const db = require("./server").db(); //usi arqali CRUD qiliw ushin
-const mongodb = require("mongodb");
+const mongodb = require("mongodb"); //nege requir qildiq ishindegi object pay ushin
 
 // 1-step. Kirish code.
 
@@ -57,7 +57,7 @@ app.post("/create-item", (req, res) => {
         // console.log("CR Step 4   DataBase >  Backend  ✅");
         // console.log(data);
         console.log(data.ops);
-        res.json(data.ops[0]);
+        res.json(data.ops[0]); //mongo db bizge data qaytaradi soni ishinde ops array databasedagi reja _id korsetedi
         // console.log("CR Step 5     Backend > Frontend ✅");
     });
 });
@@ -67,7 +67,7 @@ app.post("/delete-item", (req, res) => {
     // console.log("DEL Step 3  Backend > DataBase ✅");
     const id = req.body.id;
     db.collection("plans").deleteOne(
-        { _id: new mongodb.ObjectID(id) },
+        { _id: new mongodb.ObjectID(id) }, //Bu — oddiy matnni ("6a9cee066e463a3b73e0723f") haqiqiy ObjectID obyektiga aylantiradi, MongoDB tushunadigan formatga.
         function (err, data) {
             // console.log("DEL Step 4   DataBase >  Backend  ✅");
             res.json({ state: "success" });

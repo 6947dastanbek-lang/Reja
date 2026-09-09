@@ -19,17 +19,17 @@ function itemTemplate(item) {
     </li>`;
 }
 
-let createField = document.getElementById("create-field");
+let createField = document.getElementById("create-field"); // input IDsi
 
 document.getElementById("create-form").addEventListener("submit", function (e) {
     e.preventDefault(); //tradiotanal api stop
 
-    axios //rest api amelge asirip beriwshi texnalogiya asyn method pastegi call
+    axios //rest api amelge asirip beriwshi texnalogiya asyn method pastegi call//✅jsondi avto tarizde object qilip beredi
         .post("/create-item", { reja: createField.value })
         .then((response) => {
             document
-                .getElementById("item-list")
-                .insertAdjacentHTML("beforeend", itemTemplate(response.data));
+                .getElementById("item-list") //listin uslap pastegilerdi amelge asiradi res ishindegi data.
+                .insertAdjacentHTML("beforeend", itemTemplate(response.data)); // uslap bolip RESt api jiberedi joqardagi
             createField.value = "";
             createField.focus();
         })
@@ -39,16 +39,17 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
 });
 
 document.addEventListener("click", function (e) {
+    //e ne basilganin uslap bered log qolip teksersen koresen =>target=>classlist buttonlar =>contain=>delete me barma?degen
     //delete oper
     console.log(e.target);
     if (e.target.classList.contains("delete-me")) {
         if (confirm("Aniq ochirmoqchimisiz?")) {
             //alertqa uqsagan narse
             axios
-                .post("/delete-item", { id: e.target.getAttribute("data-id") })
+                .post("/delete-item", { id: e.target.getAttribute("data-id") }) //getartibut arqali id uslaymiz app jiberemiz ol sol id arqali oshiredi
                 .then((response) => {
-                    console.log(response.data);
-                    e.target.parentElement.parentElement.remove();
+                    console.log(response.data); //app re.json({state:"succes"}) usi
+                    e.target.parentElement.parentElement.remove(); //bul korinisti oshiredi
                 })
                 .catch((err) => {
                     console.log("Itimos qaytadan harakat qiling!");
@@ -63,9 +64,9 @@ document.addEventListener("click", function (e) {
             "O'zgartirish kiriting",
             e.target.parentElement.parentElement.querySelector(".item-text")
                 .innerHTML,
-        );
+        ); //utirden keyingi ekinshi qiymat. toshkalar cllaslardi uslaydi
         if (userInput) {
-            // console.log(userInout);
+            // console.log(userInput);
             console.log("STEP-1");
             axios
                 .post("/edit-item", {
@@ -77,7 +78,7 @@ document.addEventListener("click", function (e) {
                     console.log(response.data);
                     e.target.parentElement.parentElement.querySelector(
                         ".item-text",
-                    ).innerHTML = userInput;
+                    ).innerHTML = userInput; //ozgergen qiymatqa teneymiz
                 })
                 .catch((er) => {
                     console.log("Itimos qaytadan harakat qiling!");
@@ -88,7 +89,7 @@ document.addEventListener("click", function (e) {
 
 document.getElementById("clean-all").addEventListener("click", function () {
     axios.post("/delete-all", { delete_all: true }).then((response) => {
-        alert(response.data.state);
-        document.location.reload();
+        alert(response.data.state); //hammesi oshdi dep shigadi app jazilgan
+        document.location.reload(); //en aqirgi step bul
     });
 });

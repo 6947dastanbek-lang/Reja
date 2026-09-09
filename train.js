@@ -87,6 +87,13 @@ shop.sotish("non", 3);
 shop.qabul("cola", 4);
 
 shop.qoldiq(); //
+//MITASK
+//E-TASK
+function getReverse(kirit) {
+    return kirit.split("").reverse().join("");
+}
+
+console.log(getReverse("hello"));
 
 // console.log("JAck MA Maslahatlari");
 // const list = [
