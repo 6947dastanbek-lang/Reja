@@ -93,3 +93,4 @@ document.getElementById("clean-all").addEventListener("click", function () {
         document.location.reload(); //en aqirgi step bul
     });
 });
+hjd;
