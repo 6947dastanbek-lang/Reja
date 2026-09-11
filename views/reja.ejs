@@ -186,10 +186,55 @@
         border-color: #e6564a !important;
         color: #ff8478;
       }
+      #theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid #33453e;
+    background: #121a17;
+    color: #f2f5f3;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+body.day-mode {
+    background: #f3f5f2;
+}
+
+body.day-mode h1.display-4 {
+    color: #17201c;
+}
+
+body.day-mode .jumbotron,
+body.day-mode #item-list .list-group-item {
+    background: #ffffff !important;
+    border-color: #d7ded9;
+}
+
+body.day-mode #create-field {
+    background: #ffffff;
+    color: #17201c;
+    border-color: #c5d0ca;
+}
+
+body.day-mode .item-text {
+    color: #25302a;
+}
+
+body.day-mode #theme-toggle {
+    background: #ffffff;
+    color: #17201c;
+    border-color: #c5d0ca;
+}
+
     </style>
   </head>
   <body>
     <div class="container">
+      <button id="theme-toggle">🌙</button>
       <h1 class="display-4 text-center py-1">REJA VA MAQSADLAR</h1>
       <div class="jumbotron p-3 shadow-sm">
         <form id="create-form" action="/create-item" method="POST">

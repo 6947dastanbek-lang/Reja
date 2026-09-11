@@ -24,6 +24,12 @@ let createField = document.getElementById("create-field"); // input IDsi
 document.getElementById("create-form").addEventListener("submit", function (e) {
     e.preventDefault(); //tradiotanal api stop
 
+    if (!createField.value.trim()) {
+        alert("Iltimos, biror nima yozing!");
+        createField.focus();
+        return;
+    }
+
     axios //rest api amelge asirip beriwshi texnalogiya asyn method pastegi call//✅jsondi avto tarizde object qilip beredi
         .post("/create-item", { reja: createField.value })
         .then((response) => {
@@ -93,4 +99,15 @@ document.getElementById("clean-all").addEventListener("click", function () {
         document.location.reload(); //en aqirgi step bul
     });
 });
-hjd;
+
+const themeToggle = document.getElementById("theme-toggle");
+
+themeToggle.addEventListener("click", function () {
+    document.body.classList.toggle("day-mode");
+
+    if (document.body.classList.contains("day-mode")) {
+        themeToggle.textContent = "☀️";
+    } else {
+        themeToggle.textContent = "🌙";
+    }
+});
