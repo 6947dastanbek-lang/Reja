@@ -1,99 +1,118 @@
-//Mit Task
-//A -Task
-function hisobHarib(a, b) {
-    let count = 0;
-    for (let i = 0; i < b.length; i++) {
-        if (b[i] === a) {
-            //eger a indexsi b index ten bolsa 1 qosadi
-            count++;
+// //Mit Task
+// //A -Task
+// function hisobHarib(a, b) {
+//     let count = 0;
+//     for (let i = 0; i < b.length; i++) {
+//         if (b[i] === a) {
+//             //eger a indexsi b index ten bolsa 1 qosadi
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+
+// console.log(hisobHarib("d", "adadadddd"));
+
+// //MITASK
+// //B-task
+// function sanash(sana) {
+//     const son = sana.match(/\d/g); // /[]/gi sgartga mofiq qilip beradi
+//     return son ? son.length : 0;
+// }
+// const result = sanash("fhdosjfhnkjs1177dsfdf77");
+// console.log(result);
+
+// //MITASK
+// //C-task
+// function tekshir(a, b) {
+//     return a.split("").sort().join("") === b.split("").sort().join("");
+// }
+// console.log(tekshir("qalaysan", "nasyalaq"));
+// console.log(tekshir("qlaysan", "jaqsi"));
+
+// //MITASK
+// //D -TASK
+// class Shop {
+//     constructor(non, lagmon, cola) {
+//         this.mahsulotlar = {
+//             non: non,
+//             lagmon: lagmon,
+//             cola: cola,
+//         };
+//     }
+
+//     // waqit farmatta qaytaratin medhod
+
+//     vaqtOl() {
+//         const now = new Date();
+//         const soat = String(now.getHours()).padStart(2, "0");
+//         const minut = String(now.getMinutes()).padStart(2, "0");
+//         return `${soat}:${minut}`;
+//     }
+
+//     qoldiq() {
+//         const vaqt = this.vaqtOl();
+//         const xabar = `hozir ${vaqt}da ${this.mahsulotlar.non}ta non, ${this.mahsulotlar.lagmon}ta lagmon va ${this.mahsulotlar.cola}ta cola mavjud!`;
+//         console.log(xabar);
+//         return xabar;
+//     }
+
+//     sotish(mahsulot, son) {
+//         if (this.mahsulotlar[mahsulot] === undefined) {
+//             console.log(`Xato: "${mahsulot}" degan mahsulot mavjud emas!`);
+//             return;
+//         }
+//         if (this.mahsulotlar[mahsulot] < son) {
+//             console.log(`Xato: yetarli ${mahsulot} yo'q!`);
+//             return;
+//         }
+//         this.mahsulotlar[mahsulot] -= son;
+//         console.log(`${this.vaqtOl()}da ${son}ta ${mahsulot} sotildi.`);
+//     }
+
+//     qabul(mahsulot, son) {
+//         if (this.mahsulotlar[mahsulot] === undefined) {
+//             console.log(`Xato: "${mahsulot}" degan mahsulot mavjud emas!`);
+//             return;
+//         }
+//         this.mahsulotlar[mahsulot] += son;
+//         console.log(`${this.vaqtOl()}da ${son}ta ${mahsulot} qabul qilindi.`);
+//     }
+// }
+
+// const shop = new Shop(4, 5, 2);
+// shop.qoldiq();
+
+// shop.sotish("non", 3);
+// shop.qabul("cola", 4);
+
+// shop.qoldiq(); //
+// //MITASK
+// //E-TASK
+// function getReverse(kirit) {
+//     return kirit.split("").reverse().join("");
+// }
+
+// console.log(getReverse("hello"));
+
+// MITASK
+// G-TASK ✅
+function birinshiIndex(arr) {
+    //ikki bir hil katta qiymat birga kelsa oshani 1 kelganini log qilish kerak
+    let yoqariSon = arr[0];
+    let yoqoriIndex = 0;
+
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > yoqariSon) {
+            yoqariSon = arr[i];
+            yoqoriIndex = i;
         }
     }
-    return count;
+
+    return yoqoriIndex;
 }
 
-console.log(hisobHarib("d", "adadadddd"));
-
-//MITASK
-//B-task
-function sanash(sana) {
-    const son = sana.match(/\d/g); // /[]/gi sgartga mofiq qilip beradi
-    return son ? son.length : 0;
-}
-const result = sanash("fhdosjfhnkjs1177dsfdf77");
-console.log(result);
-
-//MITASK
-//C-task
-function tekshir(a, b) {
-    return a.split("").sort().join("") === b.split("").sort().join("");
-}
-console.log(tekshir("qalaysan", "nasyalaq"));
-console.log(tekshir("qlaysan", "jaqsi"));
-
-//MITASK
-//D -TASK
-class Shop {
-    constructor(non, lagmon, cola) {
-        this.mahsulotlar = {
-            non: non,
-            lagmon: lagmon,
-            cola: cola,
-        };
-    }
-
-    // waqit farmatta qaytaratin medhod
-
-    vaqtOl() {
-        const now = new Date();
-        const soat = String(now.getHours()).padStart(2, "0");
-        const minut = String(now.getMinutes()).padStart(2, "0");
-        return `${soat}:${minut}`;
-    }
-
-    qoldiq() {
-        const vaqt = this.vaqtOl();
-        const xabar = `hozir ${vaqt}da ${this.mahsulotlar.non}ta non, ${this.mahsulotlar.lagmon}ta lagmon va ${this.mahsulotlar.cola}ta cola mavjud!`;
-        console.log(xabar);
-        return xabar;
-    }
-
-    sotish(mahsulot, son) {
-        if (this.mahsulotlar[mahsulot] === undefined) {
-            console.log(`Xato: "${mahsulot}" degan mahsulot mavjud emas!`);
-            return;
-        }
-        if (this.mahsulotlar[mahsulot] < son) {
-            console.log(`Xato: yetarli ${mahsulot} yo'q!`);
-            return;
-        }
-        this.mahsulotlar[mahsulot] -= son;
-        console.log(`${this.vaqtOl()}da ${son}ta ${mahsulot} sotildi.`);
-    }
-
-    qabul(mahsulot, son) {
-        if (this.mahsulotlar[mahsulot] === undefined) {
-            console.log(`Xato: "${mahsulot}" degan mahsulot mavjud emas!`);
-            return;
-        }
-        this.mahsulotlar[mahsulot] += son;
-        console.log(`${this.vaqtOl()}da ${son}ta ${mahsulot} qabul qilindi.`);
-    }
-}
-
-const shop = new Shop(4, 5, 2);
-shop.qoldiq();
-
-shop.sotish("non", 3);
-shop.qabul("cola", 4);
-
-shop.qoldiq(); //
-//MITASK
-//E-TASK
-function getReverse(kirit) {
-    return kirit.split("").reverse().join("");
-}
-
-console.log(getReverse("hello"));
+console.log(birinshiIndex([5, 21, 12, 21, 8]));
 
 // console.log("JAck MA Maslahatlari");
 // const list = [
