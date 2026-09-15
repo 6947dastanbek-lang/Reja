@@ -97,22 +97,39 @@
 
 // MITASK
 // G-TASK ✅
-function birinshiIndex(arr) {
-    //ikki bir hil katta qiymat birga kelsa oshani 1 kelganini log qilish kerak
-    let yoqariSon = arr[0];
-    let yoqoriIndex = 0;
+// function birinshiIndex(arr) {
+//     //ikki bir hil katta qiymat birga kelsa oshani 1 kelganini log qilish kerak
+//     let yoqariSon = arr[0];
+//     let yoqoriIndex = 0;
 
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i] > yoqariSon) {
-            yoqariSon = arr[i];
-            yoqoriIndex = i;
+//     for (let i = 1; i < arr.length; i++) {
+//         if (arr[i] > yoqariSon) {
+//             yoqariSon = arr[i];
+//             yoqoriIndex = i;
+//         }
+//     }
+
+//     return yoqoriIndex;
+// }
+
+// console.log(birinshiIndex([5, 21, 12, 21, 8]));
+
+//MITASK
+//F -TASK ✅
+function findDoublers(check) {
+    for (let i = 0; i < check.length; i++) {
+        for (let j = i + 1; j < check.length; j++) {
+            if (check[i] === check[j]) {
+                return true;
+            }
         }
     }
 
-    return yoqoriIndex;
+    return false;
 }
 
-console.log(birinshiIndex([5, 21, 12, 21, 8]));
+console.log(findDoublers("hello")); // true qaytaradi
+console.log(findDoublers("abc")); // false qaytaradi
 
 // console.log("JAck MA Maslahatlari");
 // const list = [
