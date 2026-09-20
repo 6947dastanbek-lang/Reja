@@ -116,20 +116,29 @@
 
 //MITASK
 //F -TASK ✅
-function findDoublers(check) {
-    for (let i = 0; i < check.length; i++) {
-        for (let j = i + 1; j < check.length; j++) {
-            if (check[i] === check[j]) {
-                return true;
-            }
-        }
-    }
+// function findDoublers(check) {
+//     for (let i = 0; i < check.length; i++) {
+//         for (let j = i + 1; j < check.length; j++) {
+//             if (check[i] === check[j]) {
+//                 return true;
+//             }
+//         }
+//     }
 
-    return false;
+//     return false;
+// }
+
+// console.log(findDoublers("hello")); // true qaytaradi
+// console.log(findDoublers("abc")); // false qaytaradi
+
+//MITASK
+//K-TASK
+function unliSanach(sana) {
+    const unli = sana.match(/[aeuio]/gi); // /[]/gi sgartga mofiq qilip beradi
+    return unli ? unli.length : 0;
 }
 
-console.log(findDoublers("hello")); // true qaytaradi
-console.log(findDoublers("abc")); // false qaytaradi
+console.log(unliSanach("fhdosaaaa1111AAjfhnkjs1dsfdf"));
 
 // console.log("JAck MA Maslahatlari");
 // const list = [
