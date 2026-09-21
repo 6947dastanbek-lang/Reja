@@ -133,12 +133,23 @@
 
 //MITASK
 //K-TASK
-function unliSanach(sana) {
-    const unli = sana.match(/[aeuio]/gi); // /[]/gi sgartga mofiq qilip beradi
-    return unli ? unli.length : 0;
+// function unliSanach(sana) {
+//     const unli = sana.match(/[aeuio]/gi); // /[]/gi sgartga mofiq qilip beradi
+//     return unli ? unli.length : 0;
+// }
+
+// console.log(unliSanach("fhdosaaaa1111AAjfhnkjs1dsfdf"));
+
+//MITASK
+//L-TASK
+function harBiriJoyidaTeskari(togri_gap) {
+    return togri_gap
+        .split(" ")
+        .map((soz) => soz.split("").reverse().join(""))
+        .join(" ");
 }
 
-console.log(unliSanach("fhdosaaaa1111AAjfhnkjs1dsfdf"));
+console.log(harBiriJoyidaTeskari("we like coding!")); // "ew ekil gnidoc!"
 
 // console.log("JAck MA Maslahatlari");
 // const list = [
